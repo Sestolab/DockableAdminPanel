@@ -1,0 +1,67 @@
+@import 'include/css/variables.scss';
+
+.DockableAdminPanel{
+
+	#simplepanel{
+		z-index: 999999;
+		top: 0 !important;
+		left: 0 !important;
+		width: 180px;
+
+		> div{
+			box-shadow: none;
+			border: none;
+			border-radius: 0 0 5px 0;
+			.admin-panel-notifications{
+				display: inline-block;
+				position: fixed;
+				top: 0;
+				left: 10.5em;
+
+				.admin-panel-badge:not(:nth-child(1)){
+					right: 0.9em;
+				}
+
+				span{
+					display: none;
+				}
+
+			}
+
+		}
+
+		&:not(.compact) .admin-panel-notifications .submenu{
+			display: none !important;
+		}
+
+		.toolbar{
+			height: $gp_nav_height;
+			min-width: 180px !important;
+		}
+
+		.toolbar:after{
+			content: '';
+			height: $gp_nav_height;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 1px;
+			background-color: lighten($gp_panel_bg, 10%);
+		}
+
+		.submenu li > a{
+			text-overflow: ellipsis;
+		}
+
+		&.toggledmin .panelgroup,
+		&.minb .toolbar a:nth-child(n+2),
+		&.toggledmin .toolbar a:nth-child(n+2){
+			display: inline-block !important;
+		}
+	}
+
+	body.gpAdmin #admincontent_panel.fixed{
+		padding-left: 180px;
+	}
+
+}
