@@ -3,7 +3,7 @@
 .DockableAdminPanel{
 
 	#simplepanel{
-		z-index: 999999;
+		z-index: 9004;
 		top: 0 !important;
 		left: 0 !important;
 		width: 180px;
@@ -14,21 +14,15 @@
 			border-radius: 0 0 5px 0;
 
 			.admin-panel-notifications{
-				display: inline-block;
+				display: inline-block !important;
 				position: fixed;
 				top: 0;
 				left: 10.5em;
-
-				.admin-panel-badge:not(:nth-child(1)){
-					right: 0.9em;
-				}
+				width: 36px;
+				height: $gp_nav_height;
 
 				span{
 					display: none;
-				}
-
-				a.admin-panel-notification{
-					padding-right: 1.75em;
 				}
 
 			}
@@ -40,8 +34,12 @@
 		}
 
 		.toolbar{
-			height: $gp_nav_height;
 			min-width: 180px !important;
+
+			a{
+				height: $gp_nav_height;
+			}
+
 		}
 
 		.toolbar:after{
@@ -58,9 +56,7 @@
 			text-overflow: ellipsis;
 		}
 
-		&.toggledmin .panelgroup,
-		&.minb .toolbar a:nth-child(n+2),
-		&.toggledmin .toolbar a:nth-child(n+2){
+		&.minb .toolbar a:nth-child(n+2){
 			display: inline-block !important;
 		}
 
